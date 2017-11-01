@@ -1,4 +1,4 @@
-# Fro-ED-modulo
+# R&D Modulo
 
 URL Website:
 http://22894.hosts.ma-cloud.nl/Leerjaar_2/Periode_1/R_D/Modulo/index.html
