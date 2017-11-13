@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Palindroom</title>
+  </head>
+  <body>
+    <style>
+      body {
+         background-color:rgb(65, 62, 218);
+         text-align: center;
+      }
+      h1 {
+        margin-top: 300px;
+      }
+      #user_input {
+        margin-top: 50px;
+        width: 400px;
+        height: 100px;
+        border-radius: 40px;
+      }
+      #submit_button {
+        border-radius: 40px;
+        margin-top: 10px;
+      }
+    </style>
+    <h1>Palindrome</h1>
+    <form method="POST" target="">
+      <input type="text" id="user_input" name="input" placeholder="Voer een palindrome in"><br/>
+      <input onClick="get_input()" id="submit_button" type="submit" name="submit">
+    </form>
+    <script>
+    function palindrome(str) {
+     var re = /[^A-Za-z0-9]/g;
+     var lowRegStr = str.toLowerCase().replace(re, '');
+     var reverseStr = lowRegStr.split('').reverse().join('');
+     window.alert(reverseStr === lowRegStr);
+   }
+   function get_input() {
+    var input = document.getElementById('user_input').value;
+      palindrome(input);
+   }
+    </script>
+  </body>
+</html>
