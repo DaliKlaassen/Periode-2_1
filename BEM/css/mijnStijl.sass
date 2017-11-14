@@ -1,0 +1,67 @@
+//Variabelen voor de keuren maken
+$basisKleur: #a69885
+$eersteKleur: #b31b48
+$eersteSteun: #ff0d55
+$naviKleur: #008ab3
+$navi: #1fa4cc
+//Afmetingen
+$menuHoogte: 40px
+$aantalLinkjes: 4
+
+@import 'reset'
+
+//Het menu en de header
+html, body
+  height: 100%
+
+header
+  background-color: $navi
+  nav
+    background-color: $naviKleur
+    ul
+      list-style-type: none
+      margin: 0
+      padding: 0
+      li
+        border-bottom: 2px solid $naviKleur*0.8
+        a
+          text-decoration: none
+          display: block
+          padding: 0 20px
+          line-height: $menuHoogte
+          color: #fff
+      li:hover
+        background-color: $naviKleur*1.3
+  h1
+    margin: 0
+    padding: 20px
+    color: #fff
+p
+  padding-left: 20px
+  padding-right: 20px
+
+=border-radius($straal)
+  -webkit-border-raduis: $straal
+  -moz-border-raduis: $straal
+  -ms-border-raduis: $straal
+  border-radius: $straal
+
+
+.linkjes
+  +border-radius(15px)
+  background-color: $navi
+  margin: 20px
+  padding: 20px
+  h3
+    color: #fff
+
+@media screen and (min-width: 1300px)
+  @import 'desktop'
+
+.wrapper
+  min-height: 100%
+  margin-bottom: -25px
+  display: block
+
+.sticky-footer
+  height: 25px

@@ -1,0 +1,21 @@
+body
+  background-color: $basisKleur*1.4
+header
+  nav
+    margin-bottom: 20px
+    ul
+      height: $menuHoogte
+      li
+        width: 99% / $aantalLinkjes
+        display: inline-block
+        background-color: $navi
+        border-bottom-color: $eersteKleur
+        border-bottom-width: 5px
+      li:hover
+        border-bottom-color: $naviKleur
+.linkjes
+  +border-radius(20px)
+
+.hoofdInhoud .linkjes
+  box-sizing: border-box
+  width: 45%

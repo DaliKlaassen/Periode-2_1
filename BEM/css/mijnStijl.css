@@ -1,0 +1,82 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; }
+
+html, body {
+  height: 100%; }
+
+header {
+  background-color: #1fa4cc; }
+  header nav {
+    background-color: #008ab3; }
+    header nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0; }
+      header nav ul li {
+        border-bottom: 2px solid #006e8f; }
+        header nav ul li a {
+          text-decoration: none;
+          display: block;
+          padding: 0 20px;
+          line-height: 40px;
+          color: #fff; }
+      header nav ul li:hover {
+        background-color: #00b3e9; }
+  header h1 {
+    margin: 0;
+    padding: 20px;
+    color: #fff; }
+
+p {
+  padding-left: 20px;
+  padding-right: 20px; }
+
+.linkjes {
+  -webkit-border-raduis: 15px;
+  -moz-border-raduis: 15px;
+  -ms-border-raduis: 15px;
+  border-radius: 15px;
+  background-color: #1fa4cc;
+  margin: 20px;
+  padding: 20px; }
+  .linkjes h3 {
+    color: #fff; }
+
+@media screen and (min-width: 1300px) {
+  body {
+    background-color: #e8d5ba; }
+
+  header nav {
+    margin-bottom: 20px; }
+    header nav ul {
+      height: 40px; }
+      header nav ul li {
+        width: 24.75%;
+        display: inline-block;
+        background-color: #1fa4cc;
+        border-bottom-color: #b31b48;
+        border-bottom-width: 5px; }
+      header nav ul li:hover {
+        border-bottom-color: #008ab3; }
+
+  .linkjes {
+    -webkit-border-raduis: 20px;
+    -moz-border-raduis: 20px;
+    -ms-border-raduis: 20px;
+    border-radius: 20px; }
+
+  .hoofdInhoud .linkjes {
+    box-sizing: border-box;
+    width: 45%; } }
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -25px;
+  display: block; }
+
+.sticky-footer {
+  height: 25px; }
+
+/*# sourceMappingURL=mijnStijl.css.map */
