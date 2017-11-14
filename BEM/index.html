@@ -1,58 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Oefening SASS</title>
-    <link rel="stylesheet" href="css/mijnStijl.css">
-  </head>
-  <body>
-    <div class="wrapper">
+
+<head>
+  <meta charset="utf-8">
+  <title>Oefening SASS</title>
+  <link rel="stylesheet" href="css/mijnStijl.css">
+</head>
+
+<body>
+  <div class="wrapper">
     <header>
       <h1>Een oefening met Sass</h1>
-        <nav>
-          <ul class="navigatie">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Over Sass</a></li>
-            <li><a href="#">Tutorials</a></li>
-            <li><a href="#">Andere Pre-Processors</a></li>
-          </ul>
-        </nav>
-      </header>
+      <nav class="navigation">
+        <ul class="nav-list">
+          <li class="nav-list__item"><a class="nav-list__item__url" href="#">Home</a></li>
+          <li class="nav-list__item"><a class="nav-list__item__url" href="#">Over Sass</a></li>
+          <li class="nav-list__item"><a class="nav-list__item__url" href="#">Tutorials</a></li>
+          <li class="nav-list__item"><a class="nav-list__item__url" href="#">Andere Pre-Processors</a></li>
+        </ul>
+      </nav>
+    </header>
 
-      <div class="hoofdInhoud">
-        <p>Sass is geïnstalleerd met de command-line:<br>
+    <div class="main">
+      <p class="main__text">Sass is geïnstalleerd met de command-line:<br>
         <code>sudo gem install sass</code></br>
-        Hierbij is sudo alleen voor Mac gebruikers.
-        PC-Gebruikers moeten voor deze instalatie ook Ruby op hun PC hebben.
-        </p>
-          <ul>Voordelen bij het gebruik van Sass:
-            <li>Je kunt op 1 plaats de eigenschappen aanpassen</li>
-            <li>Kortere notatie</li>
-            <li>Eenvoudiger onderhoud</li>
-          </ul>
-          <p>Met <code>Crtl-C</code> kun je het volgproces weer stoppen.</p>
-      </div>
-      <div class="linkjes">
-        <h3>Enkele linkjes over SASS</h3>
-          <ul>
-              <li><a href="http://www.hongkiat.com/blog/getting-started-saas/">Starten met Sass</a></li>
-              <li><a href="http://sass-lang.com/guide">De Syntax</a></li>
-          </ul>
-          <h3>Linkjes naar mijn Sass-bestanden</h3>
-          <ul>
-            <li><a href="css/_reset.sass">_reset.sass</a></li>
-            <li><a href="css/mijnStijl.sass">_mijnStijl.sass</a></li>
-            <li><a href="css/_desktop.sass">_desktop.sass</a></li>
-          </ul>
-      </div>
+        Hierbij is sudo alleen voor Mac gebruikers. PC-Gebruikers moeten voor deze instalatie ook Ruby op hun PC hebben.
+      </p>
+      <ul class="main-ul">Voordelen bij het gebruik van Sass:
+        <li class="main-ul__list-item">Je kunt op 1 plaats de eigenschappen aanpassen</li>
+        <li class="main-ul__list-item">Kortere notatie</li>
+        <li class="main-ul__list-item">Eenvoudiger onderhoud</li>
+      </ul>
+      <p class="main__text">Met <code>Crtl-C</code> kun je het volgproces weer stoppen.</p>
     </div>
-      <div class="sticky-footer">
-        <div class="validatie">
-          <a href="http://validator.w3.org/check?uri=referer" target="_blank">
+    <div class="url">
+      <h3 class="url__item">Enkele linkjes over SASS</h3>
+      <ul class="url__list">
+        <li class="url__list-item"><a href="http://www.hongkiat.com/blog/getting-started-saas/">Starten met Sass</a></li>
+        <li class="url__list-item"><a href="http://sass-lang.com/guide">De Syntax</a></li>
+      </ul>
+      <h3 class="url__item">Linkjes naar mijn Sass-bestanden</h3>
+      <ul class="url__list">
+        <li class="url__list-item"><a href="css/_reset.sass">_reset.sass</a></li>
+        <li class="url__list-item"><a href="css/mijnStijl.sass">_mijnStijl.sass</a></li>
+        <li class="url__list-item"><a href="css/_desktop.sass">_desktop.sass</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="sticky-footer">
+    <div class="sticky-footer__validation-list">
+      <a class="sticky-footer__validation-list-item" href="http://validator.w3.org/check?uri=referer" target="_blank">
               <img src="http://blog.boyet.com/blog/files/media/image/valid-html5-blue.png" alt="Valide HTML5"></a>
-          <a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+      <a class="sticky-footer__validation-list-item" href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">
               <img src="http://jigsaw.w3.org/css-validator/images/vcss-blue.gif" alt="Valide CSS"></a>
-            </div>
-      </div>
-  </body>
+    </div>
+  </div>
+</body>
+
 </html>
