@@ -7,6 +7,7 @@ $navi: #1fa4cc
 //Afmetingen
 $menuHoogte: 40px
 $aantalLinkjes: 4
+$urlcolor: rgb(0, 98, 153)
 
 @import 'reset'
 
@@ -54,6 +55,13 @@ p
   padding: 20px
   &__item
     color: #fff
+    &--personal
+      background-color: $urlcolor
+      color: rgb(255, 255, 255)
+  &__list
+    background-color: $navi
+    &--personal
+      background-color: $urlcolor
 
 @media screen and (min-width: 1300px)
   @import 'desktop'

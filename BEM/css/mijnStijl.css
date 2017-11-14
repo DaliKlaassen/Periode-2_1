@@ -44,6 +44,13 @@ p {
   padding: 20px; }
   .url__item {
     color: #fff; }
+    .url__item--personal {
+      background-color: #006299;
+      color: white; }
+  .url__list {
+    background-color: #1fa4cc; }
+    .url__list--personal {
+      background-color: #006299; }
 
 @media screen and (min-width: 1300px) {
   body {
