@@ -18,69 +18,69 @@
       if(isset($_POST['submit'])){
 
         //CONNECTIE MAKEN MET DE DATABASE
-        $dbc = new PDO('mysql:host=localhost;dbname=22894_database', '22894_opdracht1', '22894_opdracht1');
+          $servername = "localhost";
+          $DBName = "22894_database";
 
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$DBName", '22894_opdracht1', '22894_opdracht1');
+    // ERROR LOGGING
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $message = $_POST['message'];
+    // PREPEARED STATEMNET ONTWERPEN
+    $stmt = $conn->prepare("INSERT INTO gastenboek VALUES (:id, :name, :message)");
 
-        function badWordFilter($data){
-          $originals = array("asshole","bitch","fuck");
-          $replacements = array("!@#$%","!@#$%","!@#$%");
-          $data = str_ireplace($originals,$replacements,$data);
+    // PARAMETERS BINDEN
+    $stmt->bindParam(':id', $id);
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':message', $cleanedMessage);
 
-          return $data;
-        }
-          $myData = $message;
+    //WAARDEN IN EEN VARIABELE ZETTEN
+    function badWordFilter($data){
+        $originals = array("asshole","bitch","fuck");
+        $replacements = array("!@#$%","!@#$%","!@#$%");
+        $data = str_ireplace($originals,$replacements,$data);
 
-          //PREPARED STATEMENT ONTWERPEN
-          $stmt = $dbc->prepare("INSERT INTO gastenboek VALUES (?,?,?");
+        return $data;
+    }
+    $data = $_POST['message'];
 
-          //PARAMETERS BINDEN
-          $stmt->bindParam(1,$userid);
-          $stmt->bindParam(2,$name);
-          $stmt->bindParam(3,$cleaned);
+    $cleaned = badWordFilter($data);
 
-          //WAARDEN IN VARIABELEN ZETTEN
-          $userid = 0;
-          $name = $_POST['name'];
-          $cleaned = badWordFilter($myData);
+    $id = 0;
+    $name = $_POST['name'];
+    $cleanedMessage = $cleaned;
 
-          //EXECUTE
-          $stmt->execute() or die ('Error querying after PDO');
+    // EXECUTE
+    $stmt->execute();
 
+    $to = 'dalimklaassen7@gmail.com';
+    $subject = 'Nieuw bericht geupload!';
+    $messageM = 'Er is een nieuw bericht geupload!';
+    mail($to, $subject, $messageM);
 }
+catch(PDOException $e)
+{
+    echo "Error: " . $e->getMessage();
+}
+$conn = null;
+}
+// ECHO DE VOORGAANDE BERICHTEN OP DE PAGINA
+    $servername = "localhost";
+    $DBName = "22894_database";
 
+    $conn = new PDO("mysql:host=$servername;dbname=$DBName", '22894_opdracht1', '22894_opdracht1');
+      $stmt = $conn->prepare("SELECT * FROM gastenboek");
+      $stmt->execute() or die ('Error querying after PDO GETTING');
+      while ($row = $stmt->fetch()){
+        $name = $row['name'];
+        $message = $row['message'];
+        echo '<div class="post">';
+        echo $name . '<br>';
+        echo $message . '<br>';
+        echo '</div>';
+        $conn = null;
+      }
 
-          // $to = 'dalimklaassen7@gmail.com';
-          // $subject = 'Nieuw bericht geupload!';
-          // $messageM = 'Er is een nieuw bericht geupload!';
-          //   mail($to, $subject, $messageM);
-              // mysqli_close($dbc);
-      // }
-
-
-//      $dbc = new PDO('mysql:host=localhost;dbname=22894_database', '22894_opdracht1', '22894_opdracht1');
-//      $stmt = $dbc->prepare("SELECT * FROM gastenboek");
-//      $stmt->execute() or die ('Error querying after PDO GETTING');
-//      while ($row = $stmt->fetch()){
-//        $name = $row['name'];
-//        $message = $row['message'];
-//        echo '<div class="post">';
-//        echo $name . '<br>';
-//        echo $message . '<br>';
-//        echo '</div>';
-//      }
-      // $query = "SELECT * FROM  gastenboek";
-      // $result = mysqli_query($dbc, $query);
-      //   while ($row = mysqli_fetch_array($result)){
-      //       $name = $row['name'];
-      //       $message = $row['message'];
-      //       echo '<div class="post">';
-      //       echo $name . '<br>';
-      //       echo $message . '<br>';
-      //       echo '</div>';
-      //   }
-      //   mysqli_close($dbc);
      ?>
   </body>
 </html>
