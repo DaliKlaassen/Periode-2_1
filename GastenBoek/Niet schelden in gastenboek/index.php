@@ -21,25 +21,24 @@
         $name = mysqli_real_escape_string($dbc, trim($_POST['name']));
         $message = mysqli_real_escape_string($dbc, trim($_POST['message']));
 
-        function badWordFilter($data){
-          $originals = array("asshole","bitch","fuck");
-          $replacements = array("!@#$%","!@#$%","!@#$%");
-          $data = str_ireplace($originals,$replacements,$data);
+        $bad_words = array("bitch", "asshole", "dumb", "fuck", "stupid", "nigger", "pussy", "dick", "prostitute", "cum");
 
-          return $data;
-  }
-          $myData = $message;
-          $cleaned = badWordFilter($myData);
-
-          $query = "INSERT INTO gastenboek VALUES (0,'$name','$cleaned')";
+      if (!empty($name) && !empty($message)) {
+        $word_array = preg_split('/\s|(?<=\w)(?=[.,:;!?)])|(?<=[.,"!()?\x{201C}])/u', $message);
+          foreach($word_array as $word){
+              if(in_array(strtolower($word), $bad_words)){
+                  $message = preg_replace('/\b'.$word.'\b/i', "!@#$%", $message);
+              }
+          }
+        }
+          $query = "INSERT INTO gastenboek VALUES (0,'$name','$message')";
           $result = mysqli_query($dbc, $query) or die ('Error querying');
           $to = 'dalimklaassen7@gmail.com';
           $subject = 'Nieuw bericht geupload!';
           $messageM = 'Er is een nieuw bericht geupload!';
             mail($to, $subject, $messageM);
               mysqli_close($dbc);
-      }
-
+          }
 
       $dbc = mysqli_connect('localhost','22894_opdracht1','22894_opdracht1','22894_database') or die ('Error connecting!');
       $query = "SELECT * FROM  gastenboek";
