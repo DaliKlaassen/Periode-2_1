@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebApp</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <div class="form"/>
+     <h1>WebApp</h1>
+      <form method="post" action="main.php">
+        <input id="input" type="text" name="firstName" required placeholder="Firstname"/>
+        <input id="input" type="text" name="preposition" placeholder="(Optional) Preposition"/>
+        <input id="input" type="text" name="surName" required placeholder="Surname"/>
+          <select id="input" name="typeSelect" onchange="valueCheck(this);">
+            <option value="none" selected>Choose a value...</option>
+            <option value="temperature">Temperature</option>
+            <option value="goalscompleted">Goals Completed</option>
+            <option value="percentage">Percentage</option>
+            <option value="kg">Kilogram</option>
+            <option value="bpm">BPM</option>
+            <option value="kcal">KCAL</option>
+            <option value="mgdl">MGDL</option>
+          </select>
+            <input id="valueOutput" type="text" required name="valueOutput" placeholder="..."/>
+            <input id="valueOutputExtra" type="text" required name="valueOutputExtra" placeholder="..."/>
+        <input id="input" type="submit" name="submit">
+      </form>
+    </div>
+    <script>
+    var output =  document.getElementById("valueOutput");
+    var outputExtra = document.getElementById("valueOutputExtra");
+
+    function valueCheck(that) {
+        if (that.value == "none") {
+           output.style.display = "none"
+           outputExtra.style.display = "none"
+        }
+         if (that.value == "temperature") {
+           output.type = 'number';
+           output.placeholder = 0 + " °C";
+           output.style.display="block"
+           outputExtra.style.display = "none"
+         }
+         if (that.value == "goalscompleted") {
+           output.type = 'number';
+           output.placeholder = 0+ " /";
+           output.style.display = "block"
+           outputExtra.type = 'number';
+           outputExtra.placeholder = "/ " + 10;
+           outputExtra.style.display = "block"
+         }
+         if (that.value == "percentage") {
+           output.type = 'number';
+           output.placeholder = 0 + " %";
+           output.style.display = "block"
+           outputExtra.style.display = "none"
+         }
+         if (that.value == "kg") {
+           output.type = 'number';
+           output.placeholder = 0 + " KG";
+           output.style.display = "block"
+           outputExtra.style.display = "none"
+         }
+         if (that.value == "bpm") {
+           output.type = 'number';
+           output.placeholder = 0 + " BPM";
+           output.style.display = "block"
+           outputExtra.style.display = "none"
+         }
+         if (that.value == "kcal") {
+           output.type = 'number';
+           output.placeholder = 0 + " KCal";
+           output.style.display = "block"
+           outputExtra.style.display = "none"
+         }
+         if (that.value == "mgdl") {
+           output.type = 'number';
+           output.placeholder = 0 + " MgDl";
+           output.style.display = "block"
+           outputExtra.style.display = "none"
+         }
+     }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300');
+
+body {
+  background-color: rgb(54, 4, 255);
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+
+.form {
+  margin-top: 300px;
+  font-family: 'Lato', sans-serif;
+}
+
+#valueOutput {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  height: 35px;
+  width: 250px;
+  margin-bottom: 5px;
+  font-family: 'Lato', sans-serif;
+}
+
+#valueOutputExtra {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  height: 35px;
+  width: 250px;
+  margin-bottom: 5px;
+  font-family: 'Lato', sans-serif;
+}
+
+.form #input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  height: 35px;
+  width: 250px;
+  margin-bottom: 5px;
+  font-family: 'Lato', sans-serif;
+}
+
+.form select{
+  border-radius: 5px;
+  height: 35px;
+  width: 250px;
+  margin-bottom: 5px;
+  font-family: 'Lato', sans-serif;
+}
