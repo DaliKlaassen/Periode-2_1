@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+html, body {
+  background: #e81818;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.svg-wrapper {
+  height: 60px;
+  padding-top: 100px;
+	margin: 0 auto;
+  position: relative;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.animation {
+  fill: transparent;
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  stroke: rgb(3, 255, 113);
+}
+
+.tekst {
+  color: #fff;
+	font-family: 'Lato', sans-serif;
+  font-size: 22px;
+  position: relative;
+  top: -48px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .animation {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+
+.container {
+  margin-top: 200px;
+}
